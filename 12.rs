@@ -24,6 +24,7 @@ struct Package {
 impl Package {
     /// Возвращает этот пакет как зависимость необходимую для
     /// компиляции другого пакета.
+    // done
     fn as_dependency(&self) -> Dependency {
         Dependency {
             name: self.name.clone(),
@@ -36,6 +37,7 @@ impl Package {
 struct PackageBuilder(Package);
 
 impl PackageBuilder {
+    // done
     fn new(name: impl Into<String>) -> Self {
         PackageBuilder(Package {
             name: name.into(),
@@ -53,18 +55,21 @@ impl PackageBuilder {
     }
 
     /// Задает автора пакета.
+    // done
     fn authors(mut self, authors: Vec<String>) -> Self {
         self.0.authors = authors;
         self
     }
 
     /// Добавляет зависимость.
+    // done
     fn dependency(mut self, dependency: Dependency) -> Self {
         self.0.dependencies.push(dependency);
         self
     }
 
     /// Задает язык. Если не указан язык, используется значение по умолчанию None.
+    // done
     fn language(mut self, language: Language) -> Self {
         self.0.language = Some(language);
         self
