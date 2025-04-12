@@ -1,0 +1,12 @@
+[default.general]
+chip = "nrf52833_xxAA" # v2
+#chip = "nrf51822_xxAA" # v1
+
+[default.reset]
+enabled = false
+
+[default.rtt]
+enabled = false
+
+[default.gdb]
+enabled = true
